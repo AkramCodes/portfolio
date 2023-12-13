@@ -1,14 +1,14 @@
    
    
   //  MEnu-Icon Navbar --------------------------------
-
+console.log('hello')
   let menuIcon = document.querySelector(`#menu-icon`);
   let navbar = document.querySelector(`.navbar`);
 
   menuIcon.onclick = () => {
 
     menuIcon.classList.toggle(`bx-x`);
-    navbar.classList.toggle(`active`);
+    navbar.classList.toggle(`activate`);
 
   }
    
@@ -26,11 +26,12 @@
       let offset = sec.offsetTop - 150;
       let height = sec.offsetHeight;
       let id = sec.getAttribute(`id`);
-
+      console.log(top)
       if(top >= offset && top < offset + height) {
         navLinks.forEach(links => {
-          links.classList.remove(`active`);
-          document.querySelector(`header nav a[href*=` + id + `]`).classList.add(`active`);
+          links.classList.remove(`activate`);
+          // document.querySelector(`header nav a[href*=` + id + `]`).classList.add(`activate`);
+          document.querySelector(`header nav a`).classList.add(`activate`);
         });
       };
 
@@ -49,7 +50,7 @@
 // ========remove navbar menu icon when click navbar link (scroll)=========
 
 menuIcon.classList.remove(`bx-x`);
-navbar.classList.remove(`active`);
+navbar.classList.remove(`activate`);
 
 
 
