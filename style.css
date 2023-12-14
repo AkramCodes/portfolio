@@ -241,7 +241,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: profassionRotate 13s ease-in-out;
+    animation: profassionRotate 13s infinite ease-in-out ;
 }
 
 @keyframes profassionRotate {
