@@ -25,6 +25,14 @@
 }
 
 
+.dark-mode{
+
+    --bg-color: #0b061f;
+    --text-color: #fdfdfd;
+   --shadow-color: rgba(0, 0, 0, .7);
+}
+
+
 html{
     font-size: 62.5%;
     overflow-x: hidden;
@@ -35,6 +43,7 @@ html{
 body{
 
     background-color: var(--bg-color);
+    
 }
 
 /* Header Section */
@@ -89,11 +98,11 @@ body{
 }
 
 
-.header.sticky .navbar a.activate{
-    color: var(--main-color);
+.header.sticky .navbar a.active{
+    color: var(--main-color) ;
 }
 
-.navbar a.activate::before{
+.navbar a.active::before{
 
     content:'';
     position: absolute;
@@ -106,9 +115,9 @@ body{
 
 }
 
-.header.sticky .navbar a.activate::before{
+.header.sticky .navbar a.active::before{
   
-    background: var(--main-color);
+    background: var(--main-color) ;
 }
 
 
@@ -123,6 +132,7 @@ body{
     color: var(--text-color);
     opacity: .9;
 }
+
 
 section{
     min-height: 100vh;
@@ -231,6 +241,31 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: profassionRotate 13s ease-in-out;
+}
+
+@keyframes profassionRotate {
+
+    0%,20%{
+        transform: rotate(0deg);
+    }
+
+    25%,45%{
+        transform: rotate(-90deg);
+    }
+
+    50%,70%{
+        transform: rotate(-180deg);
+    }
+
+    75%,95%{
+        transform: rotate(-270deg);
+    }
+
+    100%{
+        transform: rotate(-360deg);
+    }
+
 }
 .home .profession-box .profession{
     left: 0;
@@ -660,6 +695,7 @@ span{
 
 
 .footer .footer-icons a{
+    /* position: sticky; */
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -765,7 +801,7 @@ span{
      }
 /* This is not working but why ?----------------------------? */
 
-.navbar a.activate::before {
+.navbar a.active::before {
         background: var(--main-color) ;
         opacity: .7 ;
       }
@@ -783,11 +819,11 @@ span{
 
 
     .home .profession-container .overlay{
-         right:-39rem ;
+         right:-39.5rem ;
 
     }
 
-    .home-image{
+    .home-image img{
         display: none;
     }
     
@@ -817,7 +853,7 @@ span{
         right: 7rem;
         font-size: 2.6rem;
         color: var(--text-color);
-        margin-bottom: 0.1rem;
+        margin-bottom: .1rem;
     }
 
     .navbar {
@@ -851,11 +887,11 @@ span{
 
     }
 
-    .navbar a.activate{
+    .navbar a.active{
         color: var(--main-color);
     }
 
-    .navbar a.activate::before{
+    .navbar a.active::before{
         display: none;
     }
 
@@ -925,6 +961,14 @@ span{
     .home .profession-box .profession:nth-child(4){
         transform: rotate(180deg) translate(-220px, -335px);
     }
+
+
+    .home .profession-box .circle{
+        position: fixed;
+        width: 670pix;
+        height: 670px;
+        z-index: -1;
+    }
    
     .home .profession-container .overlay {
         position: fixed;
@@ -935,4 +979,115 @@ span{
         border-width: 23.9rem;
 
     }
+
+    .about{
+
+        flex-direction: column-reverse;
+        text-align: center;
+
+    }
+
+    .about-content h2{
+        text-align: center;
+    }
+
+    .about-image img{
+        width: 70vw;
+        }
+
+    .services h2,
+    .portfolio h2{
+        margin-bottom: 3rem;
+    }
+
+    .portfolio .portfolio-container{
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial-container .testimonial-wrapper{
+
+        padding: 5rem 0;
+ 
+    }
+
+    .testimonial-content .testimonial-slide{
+
+       padding: 3rem 2rem; 
+    }
+
+    .testimonial-box .swiper-button-next,
+    .testimonial-box .swiper-button-prev{
+
+        display: none;
+      
+    }
+
+
+
+
+    
+
 }
+
+
+@media (max-width : 617px){
+
+   .portfolio .portfolio-container{
+
+    grid-template-columns: 1fr;
+   }
+}
+
+
+@media (max-width : 450px){
+    html{
+        font-size: 50%;
+    }
+
+    #darkMode-icon{
+        right: 6rem;
+    }
+
+    .home{
+        padding: 0 3% 30rem;
+    }
+
+    .home .profession-box .profession:nth-child(1){
+             transform: rotate(-90deg) translate(-110px, 220px);
+    }
+
+    .home .profession-box .profession:nth-child(2){
+        transform: rotate(0deg) translate(5px, -335px);
+}
+
+.home .profession-box .profession:nth-child(3){
+    transform: rotate(90deg) translate(-105px, -440px);
+}
+
+.home .profession-box .profession:nth-child(4){
+    transform: rotate(180deg) translate(-210px, -335px);
+}
+
+.contact form .input-box input{
+    width: 100%;
+}
+
+}
+
+@media (max-width : 365px){
+      .about-image img{
+        width: 90vw;
+      }
+
+      .footer{
+        flex-direction: column-reverse;
+      }
+
+        .footer p{
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+}
+
