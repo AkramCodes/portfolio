@@ -28,8 +28,9 @@
 .dark-mode{
 
     --bg-color: #0b061f;
-    --text-color: #fdfdfd;
+    --text-color:#fdfdfd;
    --shadow-color: rgba(0, 0, 0, .7);
+   color: var(--white-color);
 }
 
 
@@ -43,6 +44,7 @@ html{
 body{
 
     background-color: var(--bg-color);
+  
     
 }
 
@@ -330,7 +332,7 @@ border-left: 384px solid transparent;
 .home-image .img {
 
 position: absolute;
-top: 23.8%;
+top: 20.2%;
 bottom: 0;
 right: -28%;
 height: 565px;
@@ -679,6 +681,7 @@ span{
 
 
 .footer{
+   
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -693,9 +696,15 @@ span{
         color: var(--white-color);
 }
 
+.footer-icons{
+   
+    /* position: sticky;
+    bottom: 0; */
+}
+
 
 .footer .footer-icons a{
-    /* position: sticky; */
+   
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -714,7 +723,7 @@ span{
 }
 
 .footer .footer-icons a i{
-
+  
     font-size: 2.4rem;
     color: #333;
 }
@@ -816,6 +825,8 @@ span{
         right: -45rem;
 
     }
+
+   
 
 
     .home .profession-container .overlay{
@@ -936,13 +947,16 @@ span{
 
     .home .profession-box .profession{
 
+       
         padding: 0 13px;
         left: auto;
         transform-origin: 0;
+    
     }
 
     .home .profession-box .profession:nth-child(1){
         transform: rotate(-90deg) translate(-120px, -210px);
+        
     }
     
 
